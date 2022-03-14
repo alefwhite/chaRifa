@@ -14,19 +14,21 @@ function addValue (value) {
 }
 
 function generateValue () {
+
     if (!stop) {
         timer = setInterval(() => {
             const value = Math.ceil(Math.random() * 100)
             addValue(value)
-        }, 10)
-
-        stop = true
+        }, 10)    
+        
+        stop = true 
     }
 }
 
 
 award.addEventListener('click', function () {
-   stop = false
+    stop = false
+
    clearInterval(timer)
 })
 
@@ -35,6 +37,8 @@ draw.addEventListener('click', function () {
 })
 
 clean.addEventListener('click', function () {
+    stop = false
+    clearInterval(timer)
     result.innerHTML = 0
 })
 
