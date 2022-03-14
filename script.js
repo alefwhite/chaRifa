@@ -6,20 +6,27 @@ const clean = document.querySelector("#clean");
 
 let timer;
 
+let stop = false
+
 
 function addValue (value) {
     result.innerHTML = value
 }
 
 function generateValue () {
-    timer = setInterval(() => {
-        const value = Math.ceil(Math.random() * 100)
-        addValue(value)
-    }, 10)
+    if (!stop) {
+        timer = setInterval(() => {
+            const value = Math.ceil(Math.random() * 100)
+            addValue(value)
+        }, 10)
+
+        stop = true
+    }
 }
 
 
 award.addEventListener('click', function () {
+   stop = false
    clearInterval(timer)
 })
 
