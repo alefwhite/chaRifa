@@ -17,9 +17,9 @@ function generateValue () {
 
     if (!stop) {
         timer = setInterval(() => {
-            const value = Math.ceil(Math.random() * 100)
+            const value = Math.round(Math.random() * 100)
             addValue(value)
-        }, 10)    
+        }, 30)    
         
         stop = true 
     }
